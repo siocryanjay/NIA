@@ -1,27 +1,44 @@
-@extends('permanent.layout')
+@extends('admin.master')
 
 @section('content')
-<div class="pull-left">
-        <h2>Permanent Employee Database</h2>
-</div>
+<div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Permanent Employees</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{{route('permanentEmployees.index')}}">Permanent Employee</a></li>
+              <li class="breadcrumb-item active">Permanent Employee Table</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+<div class="card col-lg-12">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-
         </div>
-        <div class="pull-right">
-            <a href="{{ route('permanentEmployees.create') }}" class="btn btn-success">Create new employee</a>
+        <div class="card-body">
+            <a href="{{ route('permanentEmployees.create') }}" class="btn btn-primary">Create new Permanent Employee</a>
         </div>
     </div>
 
     @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ $message }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     @endif
     <div class="table-responsive">
-        <table class="table table-boardered" id="table_perEmp">
-            <thead>
+        <table class="display nowrap" id="table_perEmp">
+            <thead class="thead-dark">
                 <tr>
+                    <th>ID</th>
                     <th>Name of Appointee</th>
                     <th>Position Title</th>
                     <th>SG</th>
@@ -56,55 +73,70 @@
                     <th>GSIS</th>
                     <th>TOTAL</th>
                     <th>Remarks</th>
+                    <th style="width: 100px;">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($permanentEmployees as $permanentEmployee)
                 <tr>
-                    <td>{{ $permanentEmployee->perEmp_id}}</td>
-                    <td>{{ $permanentEmployee->perEmp_name}}</td>
-                    <td>{{ $permanentEmployee->permEmp_title }}</td>
-                    <td>{{ $permanentEmployee->permEmp_sg }}</td>
-                    <td>{{ $permanentEmployee->permEmp_step }}</td>
-                    <td>{{ $permanentEmployee->permEmp_itemNo }}</td>
-                    <td>{{ $permanentEmployee->permEmp_division }}</td>
-                    <td>{{ $permanentEmployee->permEmp_imo }}</td>
-                    <td>{{ $permanentEmployee->permEmp_monthly }}</td>
-                    <td>{{ $permanentEmployee->permEmp_annual }}</td>
-                    <td>{{ $permanentEmployee->permEmp_dateOfbirth }}</td>
-                    <td>{{ $permanentEmployee->permEmp_age }}</td>
-                    <td>{{ $permanentEmployee->permEmp_sex }}</td>
-                    <td>{{ $permanentEmployee->permEmp_dateOfApp }}</td>
-                    <td>{{ $permanentEmployee->permEmp_dateOfLastProm }}</td>
-                    <td>{{ $permanentEmployee->permEmp_attainement}}</td>
-                    <td>{{ $permanentEmployee->permEmp_eligible }}</td>
-                    <td>{{ $permanentEmployee->permEmp_pera }}</td>
-                    <td>{{ $permanentEmployee->permEmp_midEndBonus }}</td>
-                    <td>{{ $permanentEmployee->permEmp_uniAllow }}</td>
-                    <td>{{ $permanentEmployee->permEmp_cellAllow }}</td>
-                    <td>{{ $permanentEmployee->permEmp_cashGift }}</td>
-                    <td>{{ $permanentEmployee->permEmp_rata }}</td>
-                    <td>{{ $permanentEmployee->permEmp_annivBonus }}</td>
-                    <td>{{ $permanentEmployee->permEmp_noOfDependent }}</td>
-                    <td>{{ $permanentEmployee->permEmp_childrenAllow }}</td>
-                    <td>{{ $permanentEmployee->permEmp_mealSubsi }}</td>
-                    <td>{{ $permanentEmployee->permEmp_medical }}</td>
-                    <td>{{ $permanentEmployee->permEmp_pei }}</td>
-                    <td>{{ $permanentEmployee->permEmp_ecc }}</td>
-                    <td>{{ $permanentEmployee->permEmp_pagibig }}</td>
-                    <td>{{ $permanentEmployee->permEmp_phic }}</td>
-                    <td>{{ $permanentEmployee->permEmp_gsis }}</td>
-                    <td>{{ $permanentEmployee->permEmp_total }}</td>
-                    <td>{{ $permanentEmployee->permEmp_remarks }}</td>
+                    <td>{{ $permanentEmployee->id}}</td>
+                    <td>{{ $permanentEmployee->emp_name}}</td>
+                    <td>{{ $permanentEmployee->emp_title }}</td>
+                    <td>{{ $permanentEmployee->emp_sg }}</td>
+                    <td>{{ $permanentEmployee->emp_step }}</td>
+                    <td>{{ $permanentEmployee->emp_itemNo }}</td>
+                    <td>{{ $permanentEmployee->emp_division }}</td>
+                    <td>{{ $permanentEmployee->emp_imo }}</td>
+                    <td>{{ $permanentEmployee->emp_monthly }}</td>
+                    <td>{{ $permanentEmployee->emp_annual }}</td>
+                    <td>{{ $permanentEmployee->emp_dateOfBirth }}</td>
+                    <td>{{ $permanentEmployee->emp_age }}</td>
+                    <td>{{ $permanentEmployee->emp_sex }}</td>
+                    <td>{{ $permanentEmployee->emp_dateOfApp }}</td>
+                    <td>{{ $permanentEmployee->emp_dateOfLastProm }}</td>
+                    <td>{{ $permanentEmployee->emp_attainment}}</td>
+                    <td>{{ $permanentEmployee->emp_eligible }}</td>
+                    <td>{{ $permanentEmployee->emp_pera }}</td>
+                    <td>{{ $permanentEmployee->emp_midEndBonus }}</td>
+                    <td>{{ $permanentEmployee->emp_uniAllow }}</td>
+                    <td>{{ $permanentEmployee->emp_cellAllow }}</td>
+                    <td>{{ $permanentEmployee->emp_cashGift }}</td>
+                    <td>{{ $permanentEmployee->emp_rata }}</td>
+                    <td>{{ $permanentEmployee->emp_annivBonus }}</td>
+                    <td>{{ $permanentEmployee->emp_noOfDependent }}</td>
+                    <td>{{ $permanentEmployee->emp_childrenAllow }}</td>
+                    <td>{{ $permanentEmployee->emp_mealSubsi }}</td>
+                    <td>{{ $permanentEmployee->emp_medical }}</td>
+                    <td>{{ $permanentEmployee->emp_pei }}</td>
+                    <td>{{ $permanentEmployee->emp_ecc }}</td>
+                    <td>{{ $permanentEmployee->emp_pagibig }}</td>
+                    <td>{{ $permanentEmployee->emp_phic }}</td>
+                    <td>{{ $permanentEmployee->emp_gsis }}</td>
+                    <td>{{ $permanentEmployee->emp_total }}</td>
+                    <td>{{ $permanentEmployee->emp_remarks }}</td>
+                    <td class="btn-group">
+                            <a class="btn btn-primary" href="{{ route('permanentEmployees.edit',$permanentEmployee->id) }}">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                        <form action="{{ route('permanentEmployees.destroy',$permanentEmployee->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete data?')">
+                                    <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+
+        </div>
     </div>
 </div>
 <script>
-    $(document).ready( function () {
-        $('#table_perEmp').DataTable();
-    } );
+    $('.alert').alert();
 </script>
+@endsection
 
