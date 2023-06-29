@@ -93,6 +93,7 @@
                         <option value="COS">COS</option>
                     </select>
                 </div>
+<<<<<<< HEAD
                 <!-- /.form-group -->
                 <div class="form-group">
                     <label>First name of Appointee</label>
@@ -105,6 +106,12 @@
                 <div class="form-group">
                     <label>Last name of Appointee</label>
                     <input type="text" name="emp_lName" class="form-control" placeholder="Name" required>
+=======
+                    <!-- /.form-group -->
+                <div class="form-group">
+                <label>Name of Appointee</label>
+                <input type="text" name="emp_name" class="form-control" placeholder="Name" required>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
@@ -163,6 +170,14 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
+<<<<<<< HEAD
+=======
+                    <label>Age</label>
+                    <input type="number" class="form-control" name="emp_age" placeholder="Age" required>
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                     <label>Date of Birth</label>
                           <input type="date" class="form-control" name="emp_dateOfBirth" required/>
                 </div>
@@ -212,6 +227,7 @@
 
                 <!-- /.form-group -->
                 <div class="form-group">
+<<<<<<< HEAD
                     <label>IMO</label>
                     <input readonly type="text" class="form-control" name="emp_imo" value="Bukidnon IMO" >
                 </div>
@@ -219,6 +235,19 @@
                 <div class="form-group">
                     <label>Status of Employment</label>
                     <select class="form-control select2" name="emp_status" id="emp_status" style="width: 100%;" required>
+=======
+                    <label>Division</label>
+                    <input type="text" class="form-control" name="emp_division" placeholder="Division" required>
+                </div>
+                <!-- /.form-group -->
+                <div class="form-group">
+                    <label>IMO</label>
+                    <input type="text" class="form-control" name="emp_imo" placeholder="IMO" required>
+                </div>
+                <div class="form-group">
+                    <label>Status of Employment</label>
+                    <select class="form-control select2" name="emp_status" id="emp_status" required>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                         <option value="" disabled selected hidden>Select Status of Employment</option>
                         <option value="JO">JO</option>
                         <option value="COS">COS</option>
@@ -366,5 +395,11 @@
             document.getElementById('total').value = total.toFixed(2);
         }
 </script>
+<<<<<<< HEAD
 
+=======
+<script>
+    $('.alert').alert();
+</script>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
 @endsection

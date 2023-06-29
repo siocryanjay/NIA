@@ -49,13 +49,18 @@
         </div>
         <div class="card-body">
           <div class="tab-content" id="custom-tabs-five-tabContent">
+<<<<<<< HEAD
 
+=======
+          {{setlocale(LC_MONETARY, 'en_PH');}}
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
             <!--#permanent-->
             <div class="tab-pane fade show active" id="permanent" role="tabpanel" aria-labelledby="custom-tabs-five-normal-tab">
                 <div class="table-responsive">
                     <table class="display nowrap" id="table_perEmp">
                         <thead class="thead-dark">
                             <tr>
+<<<<<<< HEAD
                                 <th style="width: 100px;">Action</th>
                                 <th>ID</th>
                                 <th>Name of Employee</th>
@@ -63,6 +68,15 @@
                                 <th class="no-sort">SG</th>
                                 <th>STEP</th>
                                 <th>Item No.</th>
+=======
+                                <th>ID</th>
+                                <th>Name of Appointee</th>
+                                <th>Position Title</th>
+                                <th>SG</th>
+                                <th>STEP</th>
+                                <th>Item No.</th>
+                                <th>Division</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                                 <th>IMO</th>
                                 <th>Monthly</th>
                                 <th>Annual</th>
@@ -91,13 +105,56 @@
                                 <th>GSIS</th>
                                 <th>TOTAL</th>
                                 <th>Remarks</th>
+<<<<<<< HEAD
                                 
+=======
+                                <th style="width: 100px;">Action</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($permanentEmployees as $permanentEmployee)
                             <tr>
+<<<<<<< HEAD
                                  <td class="btn-group">
+=======
+                                <td>{{ $permanentEmployee->id}}</td>
+                                <td>{{ $permanentEmployee->emp_name}}</td>
+                                <td>{{ $permanentEmployee->emp_title }}</td>
+                                <td>{{ $permanentEmployee->emp_sg }}</td>
+                                <td>{{ $permanentEmployee->emp_step }}</td>
+                                <td>{{ $permanentEmployee->emp_itemNo }}</td>
+                                <td>{{ $permanentEmployee->emp_division }}</td>
+                                <td>{{ $permanentEmployee->emp_imo }}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_monthly, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_annual, 2)}}</td>
+                                <td>{{ $permanentEmployee->emp_dateOfBirth }}</td>
+                                <td>{{ $permanentEmployee->emp_age }}</td>
+                                <td>{{ $permanentEmployee->emp_sex }}</td>
+                                <td>{{ $permanentEmployee->emp_dateOfApp }}</td>
+                                <td>{{ $permanentEmployee->emp_dateOfLastProm }}</td>
+                                <td>{{ $permanentEmployee->emp_attainment}}</td>
+                                <td>{{ $permanentEmployee->emp_eligible }}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_pera, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_midEndBonus, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_uniAllow, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_cellAllow, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_cashGift, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_rata, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_annivBonus, 2)}}</td>
+                                <td>{{ $permanentEmployee->emp_noOfDependent }}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_childrenAllow, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_mealSubsi, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_medical, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_pei, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_ecc, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_pagibig, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_phic, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_gsis, 2)}}</td>
+                                <td>₱{{number_format($permanentEmployee->emp_total, 2)}}</td>
+                                <td>{{ $permanentEmployee->emp_remarks }}</td>
+                                <td class="btn-group">
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                                         <a class="btn btn-primary" href="{{ route('permanentEmployees.edit',$permanentEmployee->id) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
@@ -110,6 +167,7 @@
                                             </button>
                                         </form>
                                 </td>
+<<<<<<< HEAD
                                 <td>{{ $permanentEmployee->id}}</td>
                                 <td>{{ $permanentEmployee->emp_name}}</td>
                                 <td>{{ $permanentEmployee->emp_title }}</td>
@@ -146,6 +204,10 @@
                                 <td>{{ $permanentEmployee->emp_total }}</td>
                                 <td>{{ $permanentEmployee->emp_remarks }}</td>
                             </tr>
+=======
+                            </tr>
+
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             @endforeach
                         </tbody>
                     </table>
@@ -160,12 +222,21 @@
                 <table class="display nowrap" id="table_casual">
                     <thead class="thead-dark">
                         <tr>
+<<<<<<< HEAD
                             <th>Action</th>
                             <th>ID</th>
                             <th>Name of Employee</th>
                             <th>Position Title</th>
                             <th>SG</th>
                             <th>STEP</th>
+=======
+                            <th>ID</th>
+                            <th>Name of Appointee</th>
+                            <th>Position Title</th>
+                            <th>SG</th>
+                            <th>STEP</th>
+                            <th>Division</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             <th>IMO</th>
                             <th>Monthly</th>
                             <th>Annual</th>
@@ -194,11 +265,16 @@
                             <th>GSIS</th>
                             <th>TOTAL</th>
                             <th>Remarks</th>
+<<<<<<< HEAD
+=======
+                            <th>Action</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($casualEmployees as $casualEmployee)
                         <tr>
+<<<<<<< HEAD
                             <td class="btn-group" role="group">
                               <a class="btn btn-sm btn-primary" href="{{ route('casualEmployees.edit',$casualEmployee->id) }}">
                                   <i class="fas fa-edit"></i>
@@ -211,6 +287,8 @@
                                   </button>
                               </form>
                             </td>
+=======
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             <td>{{ $casualEmployee->id}}</td>
                             <td>{{ $casualEmployee->emp_name}}</td>
                             <td>{{ $casualEmployee->emp_title }}</td>
@@ -218,8 +296,13 @@
                             <td>{{ $casualEmployee->emp_step }}</td>
                             <td>{{ $casualEmployee->emp_division }}</td>
                             <td>{{ $casualEmployee->emp_imo }}</td>
+<<<<<<< HEAD
                             <td>{{ $casualEmployee->emp_monthly }}</td>
                             <td>{{ $casualEmployee->emp_annual }}</td>
+=======
+                            <td>₱{{number_format($casualEmployee->emp_monthly, 2)}} </td>
+                            <td>₱{{number_format($casualEmployee->emp_annual, 2)}}</td>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             <td>{{ $casualEmployee->emp_dateOfBirth }}</td>
                             <td>{{ $casualEmployee->emp_age }}</td>
                             <td>{{ $casualEmployee->emp_sex }}</td>
@@ -239,6 +322,7 @@
                             <td>{{ $casualEmployee->emp_mealSubsi }}</td>
                             <td>{{ $casualEmployee->emp_medical }}</td>
                             <td>{{ $casualEmployee->emp_pei }}</td>
+<<<<<<< HEAD
                             <td>{{ $casualEmployee->emp_ecc }}</td>
                             <td>{{ $casualEmployee->emp_pagibig }}</td>
                             <td>{{ $casualEmployee->emp_phic }}</td>
@@ -246,6 +330,28 @@
                             <td>{{ $casualEmployee->emp_total }}</td>
                             <td>{{ $casualEmployee->emp_remarks }}</td>
                            
+=======
+                            <td>₱{{number_format($casualEmployee->emp_ecc, 2)}} {{ $casualEmployee->emp_ecc }}</td>
+                            <td>₱{{number_format($casualEmployee->emp_pagibig, 2)}}</td>
+                            <td>₱{{number_format($casualEmployee->emp_phic, 2)}}</td>
+                            <td>₱{{number_format($casualEmployee->emp_gsis, 2)}}</td>
+                            <td>₱{{number_format($casualEmployee->emp_total, 2)}}</td>
+                            <td>{{ $casualEmployee->emp_remarks }}</td>
+                            <td class="btn-group" role="group">
+
+                                <a class="btn btn-sm btn-primary" href="{{ route('casualEmployees.edit',$casualEmployee->id) }}">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+
+                                <form action="{{ route('casualEmployees.destroy',$casualEmployee->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete data?')">
+                                            <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                         </tr>
                         @endforeach
                     </tbody>
@@ -257,6 +363,7 @@
         <!--#jo/cos-->
         <div class="tab-pane fade show" id="jocos" role="tabpanel" aria-labelledby="custom-tabs-five-normal-tab">
             <div class="table-responsive">
+<<<<<<< HEAD
               <table class="display nowrap" id="table_joCos" style="width:100%">
                   <thead class="thead-dark">
                       <tr>
@@ -265,6 +372,16 @@
                           <th>Name of Employee</th>
                           <th>Position Title</th>
                           <th>SG</th>
+=======
+              <table class="display nowrap" id="table_joCos">
+                  <thead class="thead-dark">
+                      <tr>
+                          <th>ID</th>
+                          <th>Name of Appointee</th>
+                          <th>Position Title</th>
+                          <th>SG</th>
+                          <th>Division</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                           <th>IMO</th>
                           <th>Status of Employement</th>
                           <th>Charging</th>
@@ -278,19 +395,49 @@
                           <th>Eligibility</th>
                           <th>TOTAL</th>
                           <th>Remarks</th>
+<<<<<<< HEAD
+=======
+                          <th>Action</th>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                       </tr>
                   </thead>
                   <tbody>
                       @foreach ($joEmployees as $joEmployee)
                       <tr>
+<<<<<<< HEAD
+=======
+                          <td>{{ $joEmployee->id}}</td>
+                          <td>{{ $joEmployee->emp_name}}</td>
+                          <td>{{ $joEmployee->emp_title }}</td>
+                          <td>{{ $joEmployee->emp_sg }}</td>
+                          <td>{{ $joEmployee->emp_division }}</td>
+                          <td>{{ $joEmployee->emp_imo }}</td>
+                          <td style="color: red;"><strong>{{ $joEmployee->emp_status }}</strong></td>
+                          <td><strong>{{ $joEmployee->emp_charging }}</strong></td>
+                          <td>₱{{number_format($joEmployee->emp_monthly, 2)}}</td>
+                          <td>₱{{number_format( $joEmployee->emp_annual, 2)}}</td>
+                          <td>{{ $joEmployee->emp_dateOfBirth }}</td>
+                          <td>{{ $joEmployee->emp_age }}</td>
+                          <td>{{ $joEmployee->emp_sex }}</td>
+                          <td>{{ $joEmployee->emp_dateOfAssumption }}</td>
+                          <td>{{ $joEmployee->emp_attainment}}</td>
+                          <td>{{ $joEmployee->emp_eligible }}</td>
+                          <td> ₱{{number_format($joEmployee->emp_total, 2)}}</td>
+                          <td>{{ $joEmployee->emp_remarks }}</td>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                           <td class="btn-group" role="group">
                                   <a class="btn btn-primary" href="{{ route('joEmployees.edit',$joEmployee->id) }}">
                                       <i class="fas fa-edit"></i>
                                   </a>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                                   <button type="button" class="btn btn-danger delete-user" data-toggle="modal" data-target="#modal-danger">
                                       <i class="fas fa-trash"></i>
                                   </button>
                           </td>
+<<<<<<< HEAD
                           <td>{{ $joEmployee->id}}</td>
                           <td>{{ $joEmployee->emp_lName}}, {{$joEmployee->emp_fName}} {{ $joEmployee->emp_mName}}</td>
                           <td>{{ $joEmployee->emp_title }}</td>
@@ -308,6 +455,8 @@
                           <td>{{ $joEmployee->emp_eligible }}</td>
                           <td>₱{{ number_format($joEmployee->emp_total, 2) }}</td>
                           <td>{{ $joEmployee->emp_remarks }}</td>
+=======
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                       </tr>
                       <div class="modal fade" id="modal-danger">
                           <div class="modal-dialog">
@@ -323,12 +472,20 @@
                                   @method('DELETE')
                                       <input type="hidden" name="emp_id" id="emp_id">
                               <div class="modal-body">
+<<<<<<< HEAD
                                 <p>Are you sure you want to delete <strong>{{ $joEmployee->emp_lName}}, {{$joEmployee->emp_fName}} {{ $joEmployee->emp_mName}}</strong>?</p>
+=======
+                                <p>Are you sure you want to delete <strong>{{$joEmployee->emp_name}}</strong>?</p>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                               </div>
                               <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-outline-light">Delete</button>
                               </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             </div>
                             <!-- /.modal-content -->
                           </div>
@@ -391,7 +548,11 @@
 
   <script>
     $(function () {
+<<<<<<< HEAD
     $('#table_casual').DataTable({
+=======
+    $('#table_casual').dataTable({
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
       "paging": true,
       "lengthChange": false,
       "searching": true,
@@ -404,12 +565,17 @@
 </script>
 <script>
     $(function () {
+<<<<<<< HEAD
     $('#table_joCos').DataTable({
+=======
+    $('#table_joCos').dataTable({
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
       "paging": true,
       "lengthChange": false,
       "searching": true,
       "ordering": true,
       "info": true,
+<<<<<<< HEAD
       "responsive": false,
     });
   });
@@ -417,6 +583,22 @@
 <script>
     $(function () {
     $('#table_separated').DataTable({
+=======
+      "autoWidth": true,
+      "responsive": false,
+    });
+  });
+
+  $('#table_joCos').dataTable( {
+  "language": {
+    "decimal": ","
+  }
+} );
+</script>
+<script>
+    $(function () {
+    $('#table_separated').dataTable({
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
       "paging": true,
       "lengthChange": false,
       "searching": true,

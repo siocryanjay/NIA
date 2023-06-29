@@ -25,8 +25,11 @@
   <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{asset('/plugins/select2/css/select2.min.css')}}">
   <link rel="stylesheet" href="{{asset('/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+=======
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
   <style>
       .hidden{
           display: none;
@@ -88,7 +91,11 @@
     <!-- Brand Logo -->
     <a href="{{route('home')}}" class="brand-link">
       <img src="{{asset('dist/img/logo.png')}}" alt="NIA Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+<<<<<<< HEAD
       <span class="brand-text font-weight-light">NIA BUKIDNON IMO</span>
+=======
+      <span class="brand-text font-weight-light">NIA IMO BUKIDNON</span>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
     </a>
 
     <!-- Sidebar -->
@@ -97,7 +104,11 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{route('home')}}" class="nav-link">
+=======
+                <a href="{{route('home')}}" class="nav-link active">
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -116,7 +127,26 @@
                     <p>View Employees</p>
                 </a>
             </li>
+<<<<<<< HEAD
       
+=======
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
           <li class="nav-item fixed-bottom">
           <i class="far fa-circle text-danger"></i>
           <a href="{{ route('logout') }}"
@@ -143,10 +173,17 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
+<<<<<<< HEAD
     <strong>NIA BUKIDNON IMO 2023</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.1
+=======
+    <strong>NIA BUKIDNON IMO 2022</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
     </div>
   </footer>
 
@@ -197,8 +234,11 @@
 <!-- DataTables  & Plugins -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
+<<<<<<< HEAD
 <!-- Select2 -->
 <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>
+=======
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
 <script>
     $(function () {
     $('#table_perEmp').DataTable({
@@ -209,12 +249,20 @@
       "info": true,
       "autoWidth": true,
       "responsive": false,
+<<<<<<< HEAD
     });
     //Initialize Select2 Elements
     $('.select2').select2({
       theme: 'bootstrap4'
     })
 
+=======
+      "language": {
+                  "decimal": "-",
+                  "thousands": "."
+                },
+    });
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
   });
 </script>
 </html>

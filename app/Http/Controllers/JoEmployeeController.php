@@ -19,7 +19,11 @@ class JoEmployeeController extends Controller
             ->orWhere('emp_type', '=', 'COS')
             ->get();
 
+<<<<<<< HEAD
         return view('empView.allEmp', compact('joEmployees'));
+=======
+        return view('joEmployees.index', compact('joEmployees'));
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
     }
 
     /**
@@ -40,15 +44,26 @@ class JoEmployeeController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $jo =  Employee::where('emp_fName', $request->emp_fName)
         ->where('emp_lName', $request->emp_lName)->exists();
+=======
+        $jo = Employee::where('emp_name', $request->emp_name)->exists();
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
 
         if($jo){
           return redirect()->route('joEmployees.create')->withErrors('Employee already exist!');
         }else{
             Employee::create($request->all());
+<<<<<<< HEAD
             return redirect()->route('empView.allEmp')
                             ->with('success', 'Employee successfully added');
+=======
+            // return redirect()->route('empView.index')
+            //                 ->with('success', 'Employee successfully added');
+
+            return redirect('empView#jocos')->with('success', 'Employee successfully added');
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
         }
     }
 

@@ -14,12 +14,18 @@
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
+<<<<<<< HEAD
           </div>
           <!-- /.col -->
         </div>
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
+=======
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
     </div>
     <!-- /.content-header -->
 

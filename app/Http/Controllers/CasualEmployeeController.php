@@ -17,7 +17,11 @@ class CasualEmployeeController extends Controller
         $casualEmployees = Employee::oldest()
         ->where('emp_type', '=', 'CASUAL')
         ->get();
+<<<<<<< HEAD
         return view('casualEmployees.index', compact('casualEmployees'));
+=======
+        return view('empView.allEmp', compact('casualEmployees'));
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
     }
 
 
@@ -47,7 +51,11 @@ class CasualEmployeeController extends Controller
     public function store(Request $request)
     {
         Employee::create($request->all());
+<<<<<<< HEAD
         return redirect()->route('casualEmployees.index')
+=======
+        return redirect()->route('empView.index')
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                         ->with('success','Employee added successfully.');
     }
 

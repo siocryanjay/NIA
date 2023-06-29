@@ -16,13 +16,21 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string('emp_type');
+<<<<<<< HEAD
             $table->string('emp_fName');
             $table->string('emp_mName');
             $table->string('emp_lName');
+=======
+            $table->string('emp_name');
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
             $table->string('emp_title');
             $table->integer('emp_sg');
             $table->integer('emp_step')->nullable();
             $table->string('emp_itemNo')->nullable();
+<<<<<<< HEAD
+=======
+            $table->string('emp_division');
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
             $table->date('emp_dateOfSeparation')->nullable();
             $table->string('emp_statOfAppoint')->nullable();
             $table->string('emp_mos')->nullable();
@@ -32,6 +40,10 @@ return new class extends Migration
             $table->double('emp_monthly');
             $table->double('emp_annual');
             $table->date('emp_dateOfBirth');
+<<<<<<< HEAD
+=======
+            $table->integer('emp_age');
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
             $table->char('emp_sex');
             $table->date('emp_dateOfApp')->nullable();
             $table->date('emp_dateOfLastProm')->nullable();

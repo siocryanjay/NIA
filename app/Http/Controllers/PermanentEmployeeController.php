@@ -33,15 +33,23 @@ class PermanentEmployeeController extends Controller
 
     public function store(Request $request)
     {
+<<<<<<< HEAD
         dd($request->all());
         $permanent = Employee::where('emp_fName', $request->emp_fName)
                     ->where('emp_lName', $request->emp_lName)->exists();
+=======
+        $permanent = Employee::where('emp_name', $request->emp_name)->exists();
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
 
         if($permanent){
           return redirect()->route('permanent.create')->with('errmessage','Employee already exist!');
         }else{
             Employee::create($request->all());
+<<<<<<< HEAD
             return redirect()->route('empView.allEmp')
+=======
+            return redirect()->route('empView.index')
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
                             ->with('success','Employee added successfully');
         }
 

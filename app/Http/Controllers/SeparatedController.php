@@ -31,7 +31,11 @@ class SeparatedController extends Controller
     public function store(Request $request)
     {
         Employee::create($request->all());
+<<<<<<< HEAD
         return redirect()->route('separatedEmployees.index')
+=======
+        return redirect()->route('empView.index')
+>>>>>>> b73cde7795f3d65e5e8b47b019813dce2fda5864
             ->with('success', 'Employee successfully added');
     }
 
