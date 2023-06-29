@@ -2,17 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PermanentEmployee;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 
 class PermanentEmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-        $permanentEmployees = PermanentEmployee::latest()->paginate(5);
+        //$permanentEmployees = Employee::latest()->paginate(5);
+        $permanentEmployees = Employee::oldest()
+                    ->where('emp_type', '=', 'PERMANENT')
+                    ->get();
+        // $permanentEmployees = PermanentEmployee::all();
+        // dd($permanentEmployees);
         return view('permanentEmployees.index', compact('permanentEmployees'));
+
     }
+
 
     public function create()
     {
@@ -22,89 +33,45 @@ class PermanentEmployeeController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'perEmp_name' => 'required',
-            'perEmp_title' => 'required',
-            'perEmp_sg' => 'required',
-            'perEmp_step' => 'required',
-            'perEmp_itemNo' => 'required',
-            'perEmp_division' => 'required',
-            'perEmp_imo' => 'required',
-            'perEmp_monthly' => 'required',
-            'perEmp_annual' => 'required',
-            'perEmp_dateOfBirth' => 'required',
-            'perEmp_age' => 'required',
-            'perEmp_sex' => 'required',
-            'perEmp_dateOfApp' => 'required',
-            'perEmp_dateOfLastProm' => '',
-            'perEmp_attainment' => 'required',
-            'perEmp_eligible' => 'required',
-            'perEmp_pera' => 'required',
-            'perEmp_midEndBonus' => 'required',
-            'perEmp_uniAllow' => 'required',
-            'perEmp_cellAllow' => '',
-            'perEmp_cashGift' => 'required',
-            'perEmp_rata' => '',
-            'perEmp_annivBonus' => '',
-            'perEmp_noOfDependent' => '',
-            'perEmp_childrenAllow' => '',
-            'perEmp_mealSubsi' => '',
-            'perEmp_medical' => '',
-            'perEmp_pei' => 'required',
-            'perEmp_ecc' => 'required',
-            'perEmp_pagibig' => 'required',
-            'perEmp_phic' => 'required',
-            'perEmp_gsis' => 'required',
-            'perEmp_total' => '',
-            'perEmp_remarks' => '',
-        ]);
-        PermanentEmployee::create($request->all());
-        return redirect()->route('permanent.index')
-                        ->with('success','Employee added successfully.');
+        dd($request->all());
+        $permanent = Employee::where('emp_fName', $request->emp_fName)
+                    ->where('emp_lName', $request->emp_lName)->exists();
+
+        if($permanent){
+          return redirect()->route('permanent.create')->with('errmessage','Employee already exist!');
+        }else{
+            Employee::create($request->all());
+            return redirect()->route('empView.allEmp')
+                            ->with('success','Employee added successfully');
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PermanentEmployee  $permanentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PermanentEmployee $permanentEmployee)
+    public function show(Employee $permanentEmployee)
     {
         return view('permanent.show',compact('permanentEmployees'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PermanentEmployee  $permanentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PermanentEmployee $permanentEmployee)
+
+    public function edit(Employee $permanentEmployee)
     {
-        //
+        return view('permanentEmployees.edit',compact('permanentEmployee',));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PermanentEmployee  $permanentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PermanentEmployee $permanentEmployee)
+
+    public function update(Request $request, Employee $permanentEmployee)
     {
-        //
+        $permanentEmployee->update($request->all());
+        return redirect()->route('permanentEmployees.index')
+                        ->with('success','Employee updated successfully');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PermanentEmployee  $permanentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PermanentEmployee $permanentEmployee)
+
+    public function destroy(Employee $permanentEmployee)
     {
-        //
+
+        $permanentEmployee->delete();
+        return redirect()->back()
+                        ->with('success','Employee deleted successfully');
     }
 }
